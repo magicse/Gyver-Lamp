@@ -6,9 +6,9 @@
   ],
   "config_flow": true,
   "dependencies": [],
-  "documentation": "https://github.com/AlexxIT/GyverLamp",
+  "documentation": "https://github.com//magicse/Gyver-Lamp",
   "iot_class": "local_polling",
-  "issue_tracker": "https://github.com/AlexxIT/GyverLamp/issues",
+  "issue_tracker": "https://github.com/magicse/Gyver-Lamp/issues",
   "requirements": [],
   "version": "2.0.0"
 }
