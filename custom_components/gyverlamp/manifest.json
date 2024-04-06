@@ -1,9 +1,7 @@
 {
   "domain": "gyverlamp",
   "name": "GyverLamp",
-  "codeowners": [
-    "@AlexxIT"
-  ],
+  "codeowners": ["@AlexxIT"],
   "config_flow": true,
   "dependencies": [],
   "documentation": "https://github.com//magicse/Gyver-Lamp",
