@@ -2,11 +2,12 @@
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/custom-components/hacs)
 
-Компонент интеграции [Home Assistant][1] с [Огненной Wi-Fi Лампой][2] [Soulmate IDE][3].
+Компонент интеграции [Home Assistant][1] с [Огненной Wi-Fi Лампой][2] [Soulmate IDE][3] [Animation Player][4].
 
 [1]: https://www.home-assistant.io/
 [2]: https://github.com/alvikskor/FieryLedLampMultilingual
 [3]: https://github.com/DmytroKorniienko/FireLamp_EmbUI
+[4]: https://github.com/kostyamat/FireLamp_EmbUI-animations
 
 Компонент работает со стандартной прошивкой лампы. Текущее состояние лампы **опрашивается раз в 30 секунд**, поэтому, после старта Home Assistant, она будет пол минуты выключена.
 
