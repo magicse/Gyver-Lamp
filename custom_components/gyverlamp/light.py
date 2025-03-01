@@ -166,6 +166,7 @@ class GyverLamp(LightEntity):
         self._attr_supported_color_modes = {ColorMode.HS}
         self._attr_supported_features = LightEntityFeature.EFFECT
         self._attr_unique_id = unique_id
+        self._attr_color_mode = ColorMode.HS  # Default color mode
 
         self._attr_device_info = DeviceInfo(
             identifiers={(DOMAIN, unique_id)},
@@ -181,6 +182,11 @@ class GyverLamp(LightEntity):
     @property
     def address(self) -> tuple:
         return self.host, 8888
+
+    @property
+    def color_mode(self):
+        """Return the current color mode."""
+        return self._attr_color_mode
 
     def debug(self, message):
         _LOGGER.debug(f"{self.host} | {message}")
@@ -207,6 +213,7 @@ class GyverLamp(LightEntity):
             payload.append("SCA%d" % scale)
             speed = hs_color[1] / 100.0 * 255.0
             payload.append("SPD%d" % speed)
+            self._attr_color_mode = ColorMode.HS  # Set the color mode to HS
 
         if not self._attr_is_on:
             payload.append("P_ON")
@@ -240,7 +247,9 @@ class GyverLamp(LightEntity):
             )
             self._attr_is_on = data[5] == "1"
             self._attr_available = True
+            self._attr_color_mode = ColorMode.HS  # Ensure color mode is set
 
         except Exception as e:
             self.debug(f"Can't update: {e}")
             self._attr_available = False
+
