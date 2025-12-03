@@ -1,18 +1,14 @@
 import re
-
 import homeassistant.helpers.config_validation as cv
 import voluptuous as vol
 from homeassistant.config_entries import ConfigFlow, OptionsFlow, ConfigEntry
 from homeassistant.const import CONF_HOST
 from homeassistant.core import callback
-
 from . import DOMAIN
 from .light import CONF_EFFECTS, EFFECTS
 
-
 def parse_effects(data: str) -> list:
     return re.split(r"\s*,\s*", data.strip())
-
 
 class ConfigFlowHandler(ConfigFlow, domain=DOMAIN):
     VERSION = 1
@@ -39,10 +35,10 @@ class ConfigFlowHandler(ConfigFlow, domain=DOMAIN):
     def async_get_options_flow(config_entry):
         return OptionsFlowHandler(config_entry)
 
-
 class OptionsFlowHandler(OptionsFlow):
-    def __init__(self, config_entry: ConfigEntry):
-        self.config_entry = config_entry
+    # УДАЛИТЕ ЭТУ СТРОКУ - она больше не нужна:
+    # def __init__(self, config_entry: ConfigEntry):
+    #     self.config_entry = config_entry
 
     async def async_step_init(self, user_input=None):
         host = self.config_entry.options[CONF_HOST]
